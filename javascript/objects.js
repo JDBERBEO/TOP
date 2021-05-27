@@ -22,7 +22,7 @@ let arr = [1,2,3]
 // console.log(arr2)
 
 // Al medio
-// arr.splice(1, 0, 10)
+//arr.splice(1, 0, 10)
 // let first = arr.slice(0, 2)
 // let second = arr.slice(2)
 // let arr2 = first.concat(4).concat(second)
@@ -32,35 +32,37 @@ let arr = [1,2,3]
 // Modificar
 // arr[1] = 50
 // arr.splice(2, 1, 45)
-// let arr2 = arr.slice(0,1).concat(4).concat(arr.slice(2))
+//  let arr2 = arr.slice(0,1).concat(4).concat(arr.slice(2))
 // console.log(arr2)
 
 // Eliminar
 // Al final
 // arr.pop()
 // let arr2 = arr.slice(0, -1)
+// console.log(arr2)
 
 // Al inicio
 // arr.shift()
 // let arr2 = arr.slice(1)
+// console.log(arr2)
 
 // Al medio
 // arr.splice(3, 1)
-// let arr2 = arr.slice(0,1).concat(arr.slice(2))
+//   let arr2 = arr.slice(0,1).concat(arr.slice(2))
 // console.log(arr2)
 // console.log(arr)
 
 // Iteraciones
 // let arr3 = [[], []]
-function doble(el, index) {
-  return el.concat(1)
-}
-let arr2 = arr3.map(doble)
+// function doble(el, index) {
+//   return el.concat(1)
+// }
+// let arr2 = arr3.map(doble)
 
-function evens(el) {
-  return el % 2 === 0
-}
-let arr2 = arr.filter(evens)
+// function evens(el) {
+//   return el % 2 === 0
+// }
+// let arr2 = arr.filter(evens)
 // let arr2 = arr.reduce(function (acc, el) {
 //   return acc + el
 // }, 0)
