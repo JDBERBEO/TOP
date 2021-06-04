@@ -1,28 +1,91 @@
 
 import React from 'react';
 import './App.css';
-import { CreateTaskView } from './components/CreateTaskView';
+import { TasksView } from './components/TasksView';
 
 
 class App extends React.Component {
   
+  state = {
+    title : '',
+    done: false,
+    count: 1,
+    tasks : []
+  }
 
+  handleOnChange = e => {
+    const {value} = e.target
+    this.setState({title : value})
+  }
   
+
+  //console.log(this.state.title)
+  CreateTask = e => {
+    e.preventDefault()
+    
+    const { title, done, count } = this.state
+
+    const task = {
+      id : count + 1,
+      title,
+      done : false
+    }
+    
+    //console.log('task', task)
+    let newTasks = [...this.state.tasks, task]
+  
+  
+    this.setState({
+      tasks: newTasks,
+      count: count + 1,
+      title: ''
+    })
+    
+    //console.log(this.state.tasks)
+  }
+  
+  completeTask = id => e => {
+    console.log('tasks desde completeTask: ', this.state.tasks)
+    const {tasks} = this.state
+
+    const taskCompleted = tasks.map( el => {
+
+      if(id === el.id) {
+        return {...el, done : el.done = true}
+      }
+      return el
+    })
+
+    console.log('taskcompelte: ', taskCompleted)
+
+    this.setState({
+      tasks : taskCompleted
+    })
+
+
+  }
+
   render () {
     
+    const {title, done, tasks} = this.state
     return (
       <div className="App">
         <form 
-        // onSubmit={}
+        onSubmit={this.CreateTask}
         >
           <label htmlFor="task">Create Task: </label>
           <input
           id="task" 
           type="text"
-          // onChange={}
-          // value={}
+          onChange={this.handleOnChange}
+          value={title}
           ></input>
+          <button>Create Task</button>
         </form>
+        <TasksView 
+          tasks={tasks}
+          completeTask={this.completeTask}
+        />
       </div>
     );
   }
