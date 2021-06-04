@@ -2,7 +2,14 @@
 import React from 'react';
 import './App.css';
 import { TasksView } from './components/TasksView';
+import styles from 'styled-components'
 
+
+const FormStyle = styled.App-createForm`
+  width: 100px;
+  hieght: 70 px;
+
+`
 
 class App extends React.Component {
   
@@ -72,6 +79,7 @@ class App extends React.Component {
       <div className="App">
         <form 
         onSubmit={this.CreateTask}
+        className="App-createForm"
         >
           <label htmlFor="task">Create Task: </label>
           <input

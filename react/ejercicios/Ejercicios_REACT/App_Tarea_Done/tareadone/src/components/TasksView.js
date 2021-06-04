@@ -1,5 +1,8 @@
 import React from 'react'
 import { Task } from './Task'
+//import styles from './styles.css'
+
+
 
 export const TasksView = ({tasks, completeTask}) => {
     console.log('esto es tasks: ', tasks)
