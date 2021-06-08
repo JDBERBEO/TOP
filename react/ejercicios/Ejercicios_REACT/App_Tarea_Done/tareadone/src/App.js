@@ -2,13 +2,16 @@
 import React from 'react';
 import './App.css';
 import { TasksView } from './components/TasksView';
-import styles from 'styled-components'
+import styled from 'styled-components'
 
 
-const FormStyle = styled.App-createForm`
-  width: 100px;
-  hieght: 70 px;
+const DivStyle = styled.div`
 
+  background-color: red;
+`
+const FormStyle = styled.form`
+
+background-color: red;
 `
 
 class App extends React.Component {
@@ -77,7 +80,7 @@ class App extends React.Component {
     const {title, done, tasks} = this.state
     return (
       <div className="App">
-        <form 
+        <FormStyle 
         onSubmit={this.CreateTask}
         className="App-createForm"
         >
@@ -89,7 +92,9 @@ class App extends React.Component {
           value={title}
           ></input>
           <button>Create Task</button>
-        </form>
+        </FormStyle>
+        <DivStyle />
+    
         <TasksView 
           tasks={tasks}
           completeTask={this.completeTask}
